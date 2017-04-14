@@ -1,0 +1,18 @@
+[
+  {
+  "name": "Sunset",
+  "imageUrl": "img/sunsets/sunset_splash.jpg"
+  },
+  {
+  "name": "Wave",
+  "imageUrl": "img/sunsets/beach.jpg"
+  },
+  {
+  "name": "Scrips Pier",
+  "imageUrl": "img/landscapes/scrips-pier-landscape.jpg"
+  },
+  {
+    "name": "San Diego",
+    "imageUrl": "img/cityscapes/sandiego.jpg"
+  }
+]

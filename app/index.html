@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="finalApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="image-list/image-list.module.js"></script>
+    <script src="image-list/image-list.component.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <!-- Use a custom component to render a list of images -->
+    <image-list></image-list>
+
+    <input type="file" id="myFile" multiple size="50" onchange="uploadFunction()">
+    <p id="demo"></p>
+
+  </body>
+</html>
