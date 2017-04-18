@@ -13,7 +13,23 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
-    "protractor": "^4.0.9"
+    "protractor": "^4.0.9",
+    "express": "~4.12.3",
+    "morgan": "~1.5.2",
+    "cookie-parser": "latest",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "body-parser": "latest",
+    "passport": "~0.2.1",
+    "passport-local": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "bcrypt": "*",
+    "passport-facebook": "~2.0.0",
+    "passport-google-oauth": "~0.2.0",
+    "multer": "*",
+    "promise": "*",
+    "passport-local-mongoose": "*",
+    "ejs": "*"
   },
   "scripts": {
     "postinstall": "bower install",
@@ -29,6 +45,7 @@
     "update-index-async": "node -e \"var fs=require('fs'),indexFile='app/index-async.html',loaderFile='app/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
   },
   "dependencies": {
-    "angular-route": "~1.6.4"
+    "angular-route": "~1.6.4",
+    "bcrypt": "~1.0.2"
   }
 }

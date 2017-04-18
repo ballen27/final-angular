@@ -1,8 +1,8 @@
 {
-  "name": "angular-phonecat",
-  "description": "A starter project for AngularJS",
+  "name": "IT 410 Final",
+  "description": "A photography site for IT 410",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-phonecat",
+  "homepage": "https://github.com/ballen27/it410-final-angular",
   "license": "MIT",
   "private": true,
   "dependencies": {
