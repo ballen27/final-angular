@@ -1,27 +1,28 @@
-<!-- views/index.ejs -->
 <!doctype html>
-<html>
+<html lang="en" ng-app="finalApp">
 <head>
-    <title>Gentry Allen</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-        body 		{ padding-top:80px; }
-    </style>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="../app/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../app/app.css" />
+    <script src="../app/bower_components/angular/angular.js"></script>
+    <script src="../app/bower_components/angular-route/angular-route.js"></script>
+    <script src="../app/app.module.js"></script>
+    <script src="../app/app.config.js"></script>
+    <script src="../app/image-list/image-list.module.js"></script>
+    <script src="../app/image-list/image-list.component.js"></script>
+    <script src="../app/image-detail/image-detail.module.js"></script>
+    <script src="../app/image-detail/image-detail.component.js"></script>
+    <script src="../app/script.js"></script>
 </head>
 <body>
-<div class="container">
 
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Gentry Allen</h1>
+<!-- Use a custom component to render a list of images -->
+<div ng-view></div>
 
-        <p>Login or Register with:</p>
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
-        <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
-        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-    </div>
+<p>ajdfalskdjfalskd;fjasldkfjas;dflkja</p>
+<!--<input type="file" id="myFile" multiple size="50" onchange="uploadFunction()">-->
+<!--<p id="demo"></p>-->
 
-</div>
 </body>
 </html>

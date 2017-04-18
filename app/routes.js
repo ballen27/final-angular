@@ -14,8 +14,12 @@ var db = mongoose.connect('mongodb://localhost/it410database');
 
 var User = require('./models/user');
 module.exports = function(app, passport){
+    app.get('/authenticate', function(req, res){
+        res.render('authenticate.ejs');
+    });
+
     app.get('/', function(req, res){
-        res.render('index.ejs');
+        res.sendfile('app/index.html');
     });
 
     app.get('/users', function(req,res){

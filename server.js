@@ -33,7 +33,8 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.set('view engine', 'ejs');
-app.use(express.static('../'));
+// app.use(express.static(__dirname + 'index.html'));
+app.use(express.static('./app/'));
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use('/api', require('./api'));
 
