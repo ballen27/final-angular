@@ -1,11 +1,8 @@
-/**
- * Created by brons on 4/14/2017.
- */
 'use strict';
 
 angular.
 module('finalApp').
-config(['$locationProvider' ,'$routeProvider',
+    config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 
@@ -13,9 +10,9 @@ config(['$locationProvider' ,'$routeProvider',
         when('/images', {
             template: '<image-list></image-list>'
         }).
-        // when('/images/:imageId', {
-        //     template: '<image-detail></image-detail>'
-        // }).
+        when('/images/:imageId', {
+            template: '<image-detail></image-detail>'
+        }).
         otherwise('/images');
     }
-]);
+  ]);

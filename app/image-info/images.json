@@ -1,18 +1,24 @@
 [
   {
   "name": "Sunset",
-  "imageUrl": "img/sunsets/sunset_splash.jpg"
+  "imageUrl": "img/sunsets/sunset_splash.jpg",
+  "imageId": "sunset-one"
   },
   {
   "name": "Wave",
-  "imageUrl": "img/sunsets/beach.jpg"
+  "imageUrl": "img/sunsets/beach.jpg",
+  "imageId": "wave-one"
+
   },
   {
   "name": "Scrips Pier",
-  "imageUrl": "img/landscapes/scrips-pier-landscape.jpg"
+  "imageUrl": "img/landscapes/scrips-pier-landscape.jpg",
+  "imageId": "scrips-one"
+
   },
   {
     "name": "San Diego",
-    "imageUrl": "img/cityscapes/sandiego.jpg"
+    "imageUrl": "img/cityscapes/sandiego.jpg",
+    "imageId": "sandiego-one"
   }
 ]
