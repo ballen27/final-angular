@@ -16,7 +16,7 @@ var db = mongoose.connect('mongodb://localhost/it410database');
 // Upload Photos
 var create = function(file){
     createFile('app/image-info/' + file.originalname + "id.json",
- '[{"name": "' + file.originalname + '", "imageUrl":"app/img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}]',
+ '[{"name": "' + file.originalname + '", "imageUrl":"img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}]',
         function(err) {
         console.log("error");
         }
@@ -61,7 +61,7 @@ module.exports = function(app, passport){
     app.get('/admin', function(req, res){
         if(req.user) {
             if(req.user.local.admin || req.user.google.admin) {
-                res.sendfile('app/admin.template.html');
+                res.sendfile('app/admin.html');
             }
             else
                 res.send('You are not authorized to view this page </br> <a href="/authenticate">Return Home</a>');
@@ -73,7 +73,7 @@ module.exports = function(app, passport){
 
     app.get('/checkAdmin', function(req, res) {
        if (req.user.admin){
-           res.sendfile('app/admin.template.html');
+           res.sendfile('app/admin.html');
        }
        else {
            res.sendfile('app/index.html');
@@ -81,7 +81,7 @@ module.exports = function(app, passport){
     });
 
     app.get('/admin', function(req,res) {
-        res.sendfile('app/admin.template.html');
+        res.sendfile('app/admin.html');
     });
 
     app.get('/users', function(req,res){

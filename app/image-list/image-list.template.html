@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav float-right">
         <li>
-          <a ng-show="$ctrl.user" class="no-hover">Welcome {{ $ctrl.user.local.username}}</a>
+          <a ng-show="$ctrl.user" class="no-hover">Welcome {{ $ctrl.user.local.username || $ctrl.user.google.name}}</a>
         </li>
         <li ng-show="$ctrl.user.local.admin || $ctrl.user.google.admin">
           <a href="/admin">Admin</a>

@@ -10,6 +10,9 @@ module('finalApp').
         when('/images', {
             template: '<image-list></image-list>'
         }).
+        when('/admin', {
+            templateUrl: 'admin.html'
+        }).
         when('/images/:imageId', {
             template: '<image-detail></image-detail>'
         }).
