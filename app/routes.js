@@ -23,6 +23,30 @@ module.exports = function(app, passport){
     });
 
     app.get('/admin', function(req, res){
+        console.log(req.user.local.admin);
+        if(req.user) {
+            if(req.user.local.admin || req.user.google.admin) {
+                res.sendfile('app/admin.template.html');
+            }
+            else
+                res.send('You are not authorized to view this page </br> <a href="/authenticate">Return Home</a>');
+        }
+        else
+            res.render('authenticate.ejs');
+
+    });
+
+    app.get('/checkAdmin', function(req, res) {
+       if (req.user.admin){
+           console.log(req.user);
+           res.sendfile('app/admin.template.html');
+       }
+       else {
+           res.sendfile('app/index.html');
+       }
+    });
+
+    app.get('/admin', function(req,res) {
         res.sendfile('app/admin.template.html');
     });
 
@@ -40,7 +64,7 @@ module.exports = function(app, passport){
         res.render('login.ejs', { message: req.flash('loginMessage') });
     });
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/profile',
+        successRedirect: '/checkAdmin',
         failureRedirect: '/login',
         failureFlash: true
     }));
@@ -63,13 +87,13 @@ module.exports = function(app, passport){
     app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
 
     app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', { successRedirect: '/profile',
+        passport.authenticate('facebook', { successRedirect: '/checkAdmin',
             failureRedirect: '/' }));
 
     app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
     app.get('/auth/google/callback',
-        passport.authenticate('google', { successRedirect: '/profile',
+        passport.authenticate('google', { successRedirect: '/checkAdmin',
             failureRedirect: '/' }));
 
 

@@ -41,4 +41,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./app/routes.js')(app, passport);
 
 app.listen(3000);
-console.log("Api is running on port 3000");
+console.log("App is running on port 3000");
