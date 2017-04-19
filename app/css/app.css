@@ -36,5 +36,9 @@ footer {
   border-bottom: 1px solid #eee;
 }
 
+.no-hover {
+  font-size: 1.4em;
+  color: white !important;
+}
 
 

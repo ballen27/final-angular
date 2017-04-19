@@ -52,12 +52,14 @@ module.exports = function(app, passport){
 
     app.get('/users', function(req,res){
 
+        res.json(req.user);
+
             // Find some documents
-            User.find(function(err, docs) {
-                console.log("Found the following records");
-                console.dir(docs);
-                res.json(docs);
-            });
+            // User.find(function(err, docs) {
+            //     console.log("Found the following records");
+            //     console.dir(docs);
+            //     res.json(req.user);
+            // });
     });
 
     app.get('/login', function(req, res){

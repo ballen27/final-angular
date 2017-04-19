@@ -11,5 +11,8 @@ angular.
         $http.get('image-info/images.json').then(function(response) {
             self.images = response.data;
         });
+        $http.get('/users').then(function(stuff) {
+            self.user = stuff.data;
+        });
     }]
   });
