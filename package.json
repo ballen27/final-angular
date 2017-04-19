@@ -48,6 +48,7 @@
     "angular-route": "~1.6.4",
     "bcrypt": "~1.0.2",
     "create-file": "~1.0.1",
-    "jsonfile": "~2.4.0"
+    "jsonfile": "~2.4.0",
+    "fs": "0.0.1-security"
   }
 }

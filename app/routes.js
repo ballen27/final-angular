@@ -11,16 +11,29 @@ var app = express();
 var multer =  require("multer");
 var mongoose = require("mongoose");
 var createFile = require("create-file");
+var jsonfile = require("jsonfile");
+var fs = require("fs");
 var db = mongoose.connect('mongodb://localhost/it410database');
 
 // Upload Photos
 var create = function(file){
     createFile('app/image-info/' + file.originalname + "id.json",
- '[{"name": "' + file.originalname + '", "imageUrl":"img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}]',
+
+ '{"name": "' + file.originalname + '", "imageUrl":"img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}',
         function(err) {
         console.log("error");
         }
-    )};
+    );
+var filePlace = __dirname + '/' + 'images.json';
+var object = ',{"name": "' + file.originalname + '", "imageUrl":"img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}]'
+var obj = jsonfile.readFileSync(filePlace);
+    console.log(obj);
+    var newObj = JSON.stringify(obj);
+    fs.unlinkSync(filePlace);
+    var brandNew = newObj.replace(']', object);
+    console.log(brandNew);
+    jsonfile.writeFileSync(filePlace, brandNew);
+};
 
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
