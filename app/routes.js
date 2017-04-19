@@ -59,7 +59,6 @@ module.exports = function(app, passport){
     });
 
     app.get('/admin', function(req, res){
-        console.log(req.user.local.admin);
         if(req.user) {
             if(req.user.local.admin || req.user.google.admin) {
                 res.sendfile('app/admin.template.html');
@@ -74,7 +73,6 @@ module.exports = function(app, passport){
 
     app.get('/checkAdmin', function(req, res) {
        if (req.user.admin){
-           console.log(req.user);
            res.sendfile('app/admin.template.html');
        }
        else {
@@ -137,7 +135,7 @@ module.exports = function(app, passport){
 
     app.get('/logout', function(req, res){
         req.logout();
-        res.redirect('/');
+        res.redirect('/authenticate');
     })
 };
 

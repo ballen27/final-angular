@@ -8,8 +8,11 @@ angular.
     controller: ['$http', function ImageDetailController($http) {
         var self = this;
 
-        $http.get('image-info/images.json').then(function(response) {
-            self.images = response.data;
+        $http.get('image-info/' + $routeParams.imageId + '.json').then(function(response) {
+            self.image = response.data;
+        });
+        $http.get('/users').then(function(stuff) {
+            self.user = stuff.data;
         });
     }]
 });

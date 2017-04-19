@@ -7,6 +7,15 @@ html {
   overflow-y: scroll;
 }
 
+.center-img{
+  display: inline;
+  margin: auto;
+}
+
+.center-text{
+  text-align: center;
+}
+
 body {
   padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
