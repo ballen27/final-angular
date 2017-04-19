@@ -3,6 +3,10 @@
   width: 100px;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
@@ -15,8 +19,21 @@ footer {
   margin: 50px 0;
 }
 
+.search{
+  float: right;
+  margin-top: -7%;
+}
+
 .float-right{
   float: right;
+}
+
+.no-right-pad{
+  padding-right: 0;
+}
+
+.under-bar{
+  border-bottom: 1px solid #eee;
 }
 
 

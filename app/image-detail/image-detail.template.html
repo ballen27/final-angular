@@ -6,15 +6,15 @@
 </head>
 <body>
 
-        <h1>{{$ctrl.image.name}}</h1>
-        <ul>
-            <li ng-repeat="image in $ctrl.images">
-                <span>{{image.name}}</span>
-            </li>
-        </ul>
+<img ng-src="{{$ctrl.images[0].imageUrl}}" class="image" />
 
-            <p>is it even getting here?</p>
+<h1>{{$ctrl.images[0].name}}</h1>
+
+<p>{{$ctrl.images[0].imageUrl}}</p>
+
 
 </body>
 </html>
+
+
 
