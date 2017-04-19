@@ -1,0 +1,23 @@
+.images img{
+  height: 100px;
+  width: 100px;
+}
+
+body {
+  padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.thumb {
+  margin-bottom: 30px;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+.float-right{
+  float: right;
+}
+
+
+

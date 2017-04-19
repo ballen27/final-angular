@@ -22,6 +22,10 @@ module.exports = function(app, passport){
         res.sendfile('app/index.html');
     });
 
+    app.get('/admin', function(req, res){
+        res.sendfile('app/admin.template.html');
+    });
+
     app.get('/users', function(req,res){
 
             // Find some documents
