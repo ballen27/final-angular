@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "angular-route": "~1.6.4",
-    "bcrypt": "~1.0.2"
+    "bcrypt": "~1.0.2",
+    "create-file": "~1.0.1"
   }
 }

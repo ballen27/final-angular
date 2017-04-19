@@ -10,12 +10,48 @@ var express = require("express");
 var app = express();
 var multer =  require("multer");
 var mongoose = require("mongoose");
+var createFile = require("create-file");
 var db = mongoose.connect('mongodb://localhost/it410database');
+
+// Upload Photos
+var create = function(file){
+    createFile('app/image-info/' + file.originalname + "id.json",
+ '[{"name": "' + file.originalname + '", "imageUrl":"app/img/' + file.originalname + '", "imageId":"' + file.originalname + 'id"}]',
+        function(err) {
+        console.log("error");
+        }
+    )};
+
+var storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        console.log(file, req.body);
+        callback(null, 'app/img');
+    },
+    filename: function (req, file, callback) {
+        create(file);
+        callback(null, file.originalname);
+    }
+});
+
+var upload = multer({ storage : storage}).single('userPhoto');
 
 var User = require('./models/user');
 module.exports = function(app, passport){
     app.get('/authenticate', function(req, res){
         res.render('authenticate.ejs');
+    });
+
+    app.post('/api/photo',function(req,res) {
+        console.log("got here", req.body);
+
+
+        upload(req, res, function(err) {
+            if (err) {
+                console.log(err);
+                return res.end("Error uploading file");
+            }
+            res.end("File has uploaded");
+        });
     });
 
     app.get('/', function(req, res){
@@ -113,30 +149,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/login');
 }
 
-// Upload Photos
-
-var upload = multer({ storage : storage}).single('userPhoto');
-
-var storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-        console.log(file, req.body);
-        callback(null, '/img');
-    },
-    filename: function (req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now());
-    }
-});
-
-app.post('/api/photo',function(req,res) {
-    console.log("got here", req.body);
 
 
-    upload(req, res, function(err) {
-        if (err) {
-            console.log(err);
-            return res.end("Error uploading file");
-        }
-        res.end("File has uploaded");
-    });
-});
+
 
